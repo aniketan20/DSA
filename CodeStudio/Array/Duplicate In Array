@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Solution {
+
+	public static int findDuplicate(ArrayList<Integer> arr) {
+
+		//    Write your code here.
+		// int ans = 0 ;
+     	// for(int i : arr){
+        // 	if((Collections.frequency(arr, i)) != 1){
+        // 	  ans = i;
+		// 	  break;
+        // 	}
+      	// }
+		int ans = 0;
+		for(int i : arr){
+			ans = ans ^ i;
+		}
+		for(int i = 1 ; i < arr.size() ; i++){
+			ans = ans ^ i ;
+		}
+      	return ans;
+	}
+}
